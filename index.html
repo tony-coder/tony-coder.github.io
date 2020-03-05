@@ -171,6 +171,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-1119 Pre- and Post-order Traversals (30分)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/05/1119%20Pre-%20and%20Post-order%20Traversals%20(30%E5%88%86)/">1119 Pre- and Post-order Traversals (30分)</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/05/1119%20Pre-%20and%20Post-order%20Traversals%20(30%E5%88%86)/" class="archive-article-date">
+  	<time datetime="2020-03-05T14:17:04.357Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>题目大意：给出一棵树的结点个数n，以及它的前序遍历和后序遍历，输出它的中序遍历，如果中序遍历不唯一就输出No，且输出其中一个中序即可，如果中序遍历唯一就输出Yes，并输出它的中序</p>
+<p>主要是如何判断结果是否唯一，已知二叉树的前序和后序是无法唯一确定一颗二叉树的，因为可能会存在多种情况。当只有一个孩子节点的时候，无法判断这个孩子节点是左孩子还是右孩子</p>
+<p>先查看中序遍历是否唯一，先序遍历顺序为：根左右，后序遍历顺序为：左右根，那么如果一个节点只包含左子节点或者只包含右子节点，但是根据上面的顺序可以发现，他们的先序遍历和后续遍历是没有发生变化的，例如：</p>
+<p><img src="https://i.loli.net/2020/03/05/HOCzKonSWIEtUf5.png" alt="20190301161354433.png">)<img src="https://i.loli.net/2020/03/05/HOCzKonSWIEtUf5.png" alt="20190301161354433.png">)<img src="https://i.loli.net/2020/03/05/HOCzKonSWIEtUf5.png" alt="20190301161354433.png"></p>
+<p>此图中节点1，节点3，只含有左子节点或者右子节点，但是他们的先序遍历和后续遍历都是相同的：</p>
+<p>先序遍历：1 2 5 3 4</p>
+<p>后序遍历：5 4 3 2 1</p>
+<p><strong>所以只要父亲节点只包含一个子节点，那么这个答案就是不唯一的</strong></p>
+<p>后序遍历和先序遍历得到中序遍历（例一为例）</p>
+<p><img src="https://i.loli.net/2020/03/05/jFwO1GVPpbNIHzu.png" alt="20190301162154255.png"></p>
+<p>先序遍历： 1 2 3 4 6 7 5       后序遍历： 2 6 7 4 5 3 1</p>
+<p>在先序遍历中先取出开始的节点1，这个节点定为当前根节点，1后面一个节点2一定是节点1的一个子节点，然后在后序遍历中寻找节点2，于是便可知节点2（包括2）之前的位于节点1的左子树中，2（不包括2）后面的节点直至节点1，位于节点1的右子树</p>
+<p>节点2 3 6 7 5位于节点1的右子树中，根据先序遍历可知3为这个子树的根节点，节点4为节点3的左或右子节点中的一个，后序遍历中找到节点4，可以知道节点6 7 4位于节点3的左子树中，节点5位于节点3的右子树中</p>
+<p>依次类推，可以遍历完这棵树，于是便可得到中序遍历</p>
+<p>如果上述中找到只包含一个子节点的父节点，没有发现另外一个节点，<strong>即当前遍历区间中只包含当前节点的一个子节点</strong>，说明这个树是不唯一的，我们默认情况下将其安排在左子节点中</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">30</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> pre[maxn], post[maxn];</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; in;</span><br><span class="line"><span class="keyword">bool</span> flag;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">in_order</span><span class="params">(<span class="keyword">int</span> preLeft, <span class="keyword">int</span> preRight, <span class="keyword">int</span> postLeft, <span class="keyword">int</span> postRight)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (preLeft == preRight) &#123;</span><br><span class="line">		in.push_back(pre[preLeft]);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (pre[preLeft] == post[postRight]) &#123;</span><br><span class="line">		<span class="keyword">int</span> i = preLeft + <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span> (i &lt;= preRight &amp;&amp; pre[i] != post[postRight - <span class="number">1</span>])</span><br><span class="line">			i++;</span><br><span class="line">		<span class="keyword">if</span> (i - preLeft &gt; <span class="number">1</span>) <span class="comment">//父节点有两个子节点，结构唯一</span></span><br><span class="line">			in_order(preLeft + <span class="number">1</span>, i - <span class="number">1</span>, postLeft, postLeft + (i - preLeft - <span class="number">1</span>) - <span class="number">1</span>); <span class="comment">//左子树</span></span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (i - preLeft == <span class="number">1</span>) <span class="comment">//父节点有一个子节点，则可左可右，结构不唯一</span></span><br><span class="line">			flag = <span class="literal">false</span>;</span><br><span class="line">		in.push_back(pre[preLeft]);  <span class="comment">//根节点</span></span><br><span class="line">		in_order(i, preRight, postLeft + (i - preLeft - <span class="number">1</span>), postRight - <span class="number">1</span>);  <span class="comment">//右子树</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> N, i;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i)</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; pre[i];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i)</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; post[i];</span><br><span class="line">	flag = <span class="literal">true</span>;</span><br><span class="line">	in_order(<span class="number">0</span>, N - <span class="number">1</span>, <span class="number">0</span>, N - <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">if</span> (flag)</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"Yes"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"No"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; N - <span class="number">1</span>; ++i)</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; in[i] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; in[i] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/05/1119%20Pre-%20and%20Post-order%20Traversals%20(30%E5%88%86)/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-bean的生命周期" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
