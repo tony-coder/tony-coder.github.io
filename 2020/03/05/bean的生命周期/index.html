@@ -5,19 +5,21 @@
   
 
   
-  <title>Hello World | Hexo</title>
+  <title>bean的生命周期 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="Spring对bean进行实例化; Spring捋值和bean的引用注入到bean对应的属性中; 如果bean实现了 BeanNameAware接口, Spring浮bean的传递给setbean-Name()方法; 如果bean实现了 BeanFactoryAware接口,Spring将调用setBeanFactory()方法,将BeanFactory容器实例传入 如果bean实现了 App">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2020/01/22/hello-world/index.html">
+<meta property="og:title" content="bean的生命周期">
+<meta property="og:url" content="http://yoursite.com/2020/03/05/bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="Spring对bean进行实例化; Spring捋值和bean的引用注入到bean对应的属性中; 如果bean实现了 BeanNameAware接口, Spring浮bean的传递给setbean-Name()方法; 如果bean实现了 BeanFactoryAware接口,Spring将调用setBeanFactory()方法,将BeanFactory容器实例传入 如果bean实现了 App">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-01-22T07:52:45.957Z">
-<meta property="article:modified_time" content="2020-01-22T07:52:45.957Z">
+<meta property="og:image" content="https://i.loli.net/2020/03/05/BkOCdqahDGX9W1i.png">
+<meta property="article:published_time" content="2020-03-05T07:34:39.139Z">
+<meta property="article:modified_time" content="2020-03-05T07:34:39.139Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/03/05/BkOCdqahDGX9W1i.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -66,10 +68,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-bean的生命周期" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/01/22/hello-world/" class="article-date">
-  <time datetime="2020-01-22T07:52:45.957Z" itemprop="datePublished">2020-01-22</time>
+    <a href="/2020/03/05/bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="article-date">
+  <time datetime="2020-03-05T07:34:39.139Z" itemprop="datePublished">2020-03-05</time>
 </a>
     
   </div>
@@ -80,7 +82,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      bean的生命周期
     </h1>
   
 
@@ -88,24 +90,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p><img src="https://i.loli.net/2020/03/05/BkOCdqahDGX9W1i.png" alt="批注 2020-03-05 151808.png"></p>
+<ol>
+<li>Spring对bean进行实例化;</li>
+<li>Spring捋值和bean的引用注入到bean对应的属性中;</li>
+<li>如果bean实现了 BeanNameAware接口, Spring浮bean的传递给setbean-Name()方法;</li>
+<li>如果bean实现了 BeanFactoryAware接口,Spring将调用setBeanFactory()方法,将BeanFactory容器实例传入</li>
+<li>如果bean实现了 ApplicationContextAware接口,Spring将调用setApplicationContext()方法,将bean所在的应用上下文的引用传入进来;</li>
+<li>如果bean实现了 BeanPostProcessor接口,Spring捋调用它们的postProcessBeforeInitialization()方法</li>
+<li>如果bean实现了 InitializingBean接口,Spring将调用它们的afterPropertiesSet()方法。类似地,如果bean使用init- method声明了初始化方法,该方法也会被调用;</li>
+<li>如果bean实现了 BeanPostProcessor接口,Spring捋调用它们的postProcessAfterInitialization()方法;</li>
+<li>此时,bean已经准备就绪,可以被应用程序使用了,它们捋一直驻留在应用上下文中,直到该应用上下文被销毁</li>
+<li>如果bean实现了Disposablebean接口,Spring捋调用它的 destroy()接囗方法。同样如果bean使用destroy- method声明了销毁方法,该方法也会被调用。</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/22/hello-world/" data-id="ck5p0qph90000ioui4951hnpu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/03/05/bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" data-id="ck7efqeli00000wuigvk4gby2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -114,15 +116,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2020/01/22/My-First-Post/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          My First Post
-        
-      </div>
-    </a>
   
+    <a href="/2020/03/04/1064%20Complete%20Binary%20Search%20Tree%20(30%E5%88%86)/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">1064 Complete Binary Search Tree (30分)</div>
+    </a>
   
 </nav>
 

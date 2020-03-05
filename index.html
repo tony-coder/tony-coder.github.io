@@ -64,6 +64,55 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-bean的生命周期" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/05/bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="article-date">
+  <time datetime="2020-03-05T07:34:39.139Z" itemprop="datePublished">2020-03-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/05/bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">bean的生命周期</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://i.loli.net/2020/03/05/BkOCdqahDGX9W1i.png" alt="批注 2020-03-05 151808.png"></p>
+<ol>
+<li>Spring对bean进行实例化;</li>
+<li>Spring捋值和bean的引用注入到bean对应的属性中;</li>
+<li>如果bean实现了 BeanNameAware接口, Spring浮bean的传递给setbean-Name()方法;</li>
+<li>如果bean实现了 BeanFactoryAware接口,Spring将调用setBeanFactory()方法,将BeanFactory容器实例传入</li>
+<li>如果bean实现了 ApplicationContextAware接口,Spring将调用setApplicationContext()方法,将bean所在的应用上下文的引用传入进来;</li>
+<li>如果bean实现了 BeanPostProcessor接口,Spring捋调用它们的postProcessBeforeInitialization()方法</li>
+<li>如果bean实现了 InitializingBean接口,Spring将调用它们的afterPropertiesSet()方法。类似地,如果bean使用init- method声明了初始化方法,该方法也会被调用;</li>
+<li>如果bean实现了 BeanPostProcessor接口,Spring捋调用它们的postProcessAfterInitialization()方法;</li>
+<li>此时,bean已经准备就绪,可以被应用程序使用了,它们捋一直驻留在应用上下文中,直到该应用上下文被销毁</li>
+<li>如果bean实现了Disposablebean接口,Spring捋调用它的 destroy()接囗方法。同样如果bean使用destroy- method声明了销毁方法,该方法也会被调用。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/03/05/bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" data-id="ck7efqeli00000wuigvk4gby2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-1064 Complete Binary Search Tree (30分)" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/03/04/1064%20Complete%20Binary%20Search%20Tree%20(30%E5%88%86)/" class="article-date">
@@ -262,6 +311,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/03/05/bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">bean的生命周期</a>
+          </li>
         
           <li>
             <a href="/2020/03/04/1064%20Complete%20Binary%20Search%20Tree%20(30%E5%88%86)/">1064 Complete Binary Search Tree (30分)</a>
