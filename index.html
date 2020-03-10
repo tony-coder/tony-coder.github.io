@@ -194,7 +194,7 @@
         <h3 id="题意分析"><a href="#题意分析" class="headerlink" title="题意分析"></a>题意分析</h3><p>给出每个用户关注的人，问如果给定的人发了一条微博，在所给的最大转发层数下，最多有多少个人会转发。注意给出的是每个用户关注的人，而不是关注该用户的人。</p>
 <p>注意这道题用BFS很容易，用DFS也可以但容易出问题，后面将作详细分析。</p>
 <h3 id="广度优先遍历"><a href="#广度优先遍历" class="headerlink" title="广度优先遍历"></a>广度优先遍历</h3><p>定义一个level数组，表示每个用户转发时的当前转发层数，当转发层数到达给定的最大转发层数时，跳出循环。定义一个visit数组表示每个用户是否已经访问过，确保每个用户只被访问一次。然后利用广度优先遍历的算法进行搜索即可。</p>
-<p>代码</p>
+<p>代码：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1000</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;g[maxn];</span><br><span class="line"><span class="keyword">int</span> N, L;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> u)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> ans = <span class="number">0</span>, level[N + <span class="number">1</span>] = &#123;<span class="number">0</span>&#125;; <span class="comment">//level表示用户转发时所处的转发层数</span></span><br><span class="line">	<span class="keyword">bool</span> vis[N + <span class="number">1</span>] = &#123;<span class="literal">false</span>&#125;;</span><br><span class="line">	<span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt;q;</span><br><span class="line">	q.push(u);</span><br><span class="line">	vis[u] = <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">while</span> (!q.empty()) &#123;</span><br><span class="line">		<span class="keyword">int</span> t = q.front();</span><br><span class="line">		q.pop();</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">auto</span> i : g[t]) &#123;</span><br><span class="line">			<span class="keyword">if</span> (!vis[i] &amp;&amp; level[t] &lt; L) &#123;</span><br><span class="line">				ans++;</span><br><span class="line">				level[i] = level[t] + <span class="number">1</span>;</span><br><span class="line">				vis[i] = <span class="literal">true</span>;</span><br><span class="line">				q.push(i);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addEdgr</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">	g[u].push_back(v);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; N &gt;&gt; L;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> u = <span class="number">1</span>; u &lt;= N; ++u) &#123;</span><br><span class="line">		<span class="keyword">int</span> M, v;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; M;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; M; ++j) &#123;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; v;</span><br><span class="line">			addEdgr(v, u);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> K, id;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; K;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; K; ++i) &#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; id;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; bfs(id) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="深度优先遍历"><a href="#深度优先遍历" class="headerlink" title="深度优先遍历"></a>深度优先遍历</h3><p>这道题使用深度优先遍历比使用广度优先遍历要复杂一些，原因在于对于一个在第 i 层访问到的用户来说，如果此时达到转发层数上限，就无法继续遍历了，然而如果该用户可以通过另一条更短的途径访问到，就可以继续深度遍历。比如样例输入：</p>
@@ -216,35 +216,35 @@
 </thead>
 <tbody><tr>
 <td>0</td>
-<td>答案正确</td>
+<td><font color=red>答案正确</font></td>
 <td>2</td>
 <td>384</td>
 <td>18/18</td>
 </tr>
 <tr>
 <td>1</td>
-<td>答案正确</td>
+<td><font color=red>答案正确</font></td>
 <td>2</td>
 <td>352</td>
 <td>5/5</td>
 </tr>
 <tr>
 <td>2</td>
-<td>答案正确</td>
+<td><font color=red>答案正确</font></td>
 <td>1</td>
 <td>364</td>
 <td>2/2</td>
 </tr>
 <tr>
 <td>3</td>
-<td>答案正确</td>
+<td><font color=red>答案正确</font></td>
 <td>2</td>
 <td>264</td>
 <td>2/2</td>
 </tr>
 <tr>
 <td>4</td>
-<td>运行超时</td>
+<td><font color=green>运行超时</font></td>
 <td></td>
 <td></td>
 <td>0/3</td>
@@ -265,35 +265,35 @@
 </thead>
 <tbody><tr>
 <td>0</td>
-<td>答案正确</td>
+<td><font color=red>答案正确</font></td>
 <td>2</td>
 <td>384</td>
 <td>18/18</td>
 </tr>
 <tr>
 <td>1</td>
-<td>答案正确</td>
+<td><font color=red>答案正确</font></td>
 <td>2</td>
 <td>352</td>
 <td>5/5</td>
 </tr>
 <tr>
 <td>2</td>
-<td>答案正确</td>
+<td><font color=red>答案正确</font></td>
 <td>1</td>
 <td>364</td>
 <td>2/2</td>
 </tr>
 <tr>
 <td>3</td>
-<td>答案正确</td>
+<td><font color=red>答案正确</font></td>
 <td>2</td>
 <td>264</td>
 <td>2/2</td>
 </tr>
 <tr>
 <td>4</td>
-<td>答案正确</td>
+<td><font color=red>答案正确</font></td>
 <td>405</td>
 <td>1000</td>
 <td>0/3</td>
@@ -305,7 +305,53 @@
 <p>如果6号发布微博，转发层数上限为4层的话，大家可以依靠图形自行计算一下4层内能够遍历的用户个数，很明显是6，但是按照第二份代码，得出的结果却是5。我又使用广度优先遍历的代码测试了一下得出的结果依然是6。显然6是正确答案，那么第二份代码错在哪里呢？上面的输入有两条路径：6-&gt;1-&gt;3-&gt;4-&gt;5和6-&gt;2-&gt;4-&gt;5-&gt;7，在第二份代码的运行过程中先遍历的是6-&gt;1-&gt;3-&gt;4-&gt;5路径，此时1、3、4都被访问了一次，5虽然被访问了一次当后续再被访问时仍可继续向下遍历，但是1、3、4不可以。这样在遍历6-&gt;2-&gt;4-&gt;5-&gt;7路径访问到4这个节点时，就没有办法再向下遍历到5了，以至于最后只访问到1、 3、 4、 5、2这5个用户，所以得出了错误结果。究其原因，还是在于第二份代码只保证了每条路径的最后一个用户在被其他路径访问到时继续向下遍历，一旦其他路径遍历到的是不是最后一个用户而是其他用户，这个算法就会出错。但是pat给出的测试点中没有测试这个点，所以第二份代码虽然是错误的代码，仍通过了所有测试用例。</p>
 <p>那么有没有正确的代码呢？我又思考了一下，发现可以这样，为了避免上述问题，每个结点不可避免的要被多次访问，但是又要设置某些限制条件进行剪枝，那么遍历的条件可以这样设置：借鉴于广度优先遍历的方法，可以设置一个数组layer存储每个结点被遍历到时的层数，<strong>每个结点要想继续进行深度优先遍历，要么这个节点以前从未访问过，要么这个节点当前被访问时的层数小于layer数组中对应的层数</strong>，整个第三份c++代码如下所示：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1000</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; g[maxn];</span><br><span class="line"><span class="keyword">bool</span> vis[maxn];  <span class="comment">//vis表示是否已经被访问</span></span><br><span class="line"><span class="keyword">int</span> layer[maxn];  <span class="comment">//储存每个结点被遍历到时的层数</span></span><br><span class="line"><span class="keyword">int</span> N, L;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> level)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (level == L + <span class="number">1</span>)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	vis[u] = <span class="literal">true</span>;  <span class="comment">//当前结点置为已访问</span></span><br><span class="line">	layer[u] = level; <span class="comment">//更新被遍历时所处层数</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> i : g[u]) &#123;</span><br><span class="line">		<span class="keyword">if</span> (!vis[i] || layer[i] &gt; level + <span class="number">1</span>) &#123; <span class="comment">//这个节点以前从未访问过或者这个节点当前被访问时的层数&lt;layer数组中对应的层数</span></span><br><span class="line">			dfs(i, level + <span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addEdgr</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">	g[u].push_back(v);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; N &gt;&gt; L;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> u = <span class="number">1</span>; u &lt;= N; ++u) &#123;</span><br><span class="line">		<span class="keyword">int</span> M, v;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; M;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; M; ++j) &#123;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; v;</span><br><span class="line">			addEdgr(v, u);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> K, id, ans;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; K;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; K; ++i) &#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; id;</span><br><span class="line">		<span class="built_in">memset</span>(vis, <span class="literal">false</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">		<span class="built_in">memset</span>(vis, <span class="number">-1</span>, <span class="keyword">sizeof</span>(layer));</span><br><span class="line">		ans = <span class="number">0</span>;</span><br><span class="line">		dfs(id, <span class="number">0</span>);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N ; ++i)  <span class="comment">//遍历layer数组，元素&gt;0的即为符合条件的人，进行递增</span></span><br><span class="line">			ans += layer[i] &gt; <span class="number">0</span> ? <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>pat测试结果<br>测试点 | 结果 | 用时(ms) | 内存(kB) | 得分/满分<br>—|—|—|—|—<br>0|答案正确|2|384|18/18<br>1|答案正确|2|352|5/5<br>2|答案正确|1|364|2/2<br>3|答案正确|2|264|2/2<br>4|答案正确|605|1008|0/3</p>
+<p>pat测试结果</p>
+<table>
+<thead>
+<tr>
+<th>测试点</th>
+<th>结果</th>
+<th>用时(ms)</th>
+<th>内存(kB)</th>
+<th>得分/满分</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td><font color=red>答案正确</font></td>
+<td>2</td>
+<td>384</td>
+<td>18/18</td>
+</tr>
+<tr>
+<td>1</td>
+<td><font color=red>答案正确</font></td>
+<td>2</td>
+<td>352</td>
+<td>5/5</td>
+</tr>
+<tr>
+<td>2</td>
+<td><font color=red>答案正确</font></td>
+<td>1</td>
+<td>364</td>
+<td>2/2</td>
+</tr>
+<tr>
+<td>3</td>
+<td><font color=red>答案正确</font></td>
+<td>2</td>
+<td>264</td>
+<td>2/2</td>
+</tr>
+<tr>
+<td>4</td>
+<td><font color=red>答案正确</font></td>
+<td>605</td>
+<td>1008</td>
+<td>0/3</td>
+</tr>
+</tbody></table>
 <p>该算法处理我自己设计的输入得出的也是6这个正确结果</p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>在图论中虽然深度优先遍历比广度优先遍历更常用一些，但对于类似于该题目这样的设置了遍历层数上限的题目，广度优先遍历要更加简洁，逻辑也更加清晰。</p>
 
