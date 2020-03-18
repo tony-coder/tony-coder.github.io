@@ -6,13 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>鲍锋雄的博客</title>
+  <title>线性时间选择问题 | 鲍锋雄的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="鲍锋雄的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="元素选择问题(Select)：对于给定的包含n个元素的线性序集和一个整数k，1≤k≤n，找出这n个元素中第k小的元素。 1) 基本思路：先排序(如：快速排序)，后查找。 2) 改进思路：由于只需要查找第k小的元素，故只要递归查找划分后的某个分区即可，而无需全部排序。 元素选择问题的主程序 123456789template&lt;class Type&gt;Type RandomizedSelec">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线性时间选择问题">
+<meta property="og:url" content="http://yoursite.com/2020/03/18/%E7%BA%BF%E6%80%A7%E6%97%B6%E9%97%B4%E9%80%89%E6%8B%A9%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="鲍锋雄的博客">
+<meta property="og:description" content="元素选择问题(Select)：对于给定的包含n个元素的线性序集和一个整数k，1≤k≤n，找出这n个元素中第k小的元素。 1) 基本思路：先排序(如：快速排序)，后查找。 2) 改进思路：由于只需要查找第k小的元素，故只要递归查找划分后的某个分区即可，而无需全部排序。 元素选择问题的主程序 123456789template&lt;class Type&gt;Type RandomizedSelec">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2020/03/18/Q24YKy8mU6BiqaG.png">
+<meta property="og:image" content="https://i.loli.net/2020/03/18/Q24YKy8mU6BiqaG.png">
+<meta property="og:image" content="https://i.loli.net/2020/03/18/G7xUCB9RHLftiuO.png">
+<meta property="article:published_time" content="2020-03-18T14:57:44.349Z">
+<meta property="article:modified_time" content="2020-03-18T14:57:44.349Z">
 <meta property="article:author" content="bfx">
 <meta property="article:tag" content="后端">
 <meta property="article:tag" content="java">
@@ -34,6 +41,7 @@
 <meta property="article:tag" content="spring">
 <meta property="article:tag" content="spring boot">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/03/18/Q24YKy8mU6BiqaG.png">
   
     <link rel="alternative" href="/atom.xml" title="鲍锋雄的博客" type="application/atom+xml">
   
@@ -169,16 +177,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-线性时间选择问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-线性时间选择问题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/18/%E7%BA%BF%E6%80%A7%E6%97%B6%E9%97%B4%E9%80%89%E6%8B%A9%E9%97%AE%E9%A2%98/">线性时间选择问题</a>
+    <h1 class="article-title" itemprop="name">
+      线性时间选择问题
     </h1>
   
 
@@ -219,6 +225,27 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -226,16 +253,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/18/%E7%BA%BF%E6%80%A7%E6%97%B6%E9%97%B4%E9%80%89%E6%8B%A9%E9%97%AE%E9%A2%98/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/18/%E7%BA%BF%E6%80%A7%E6%97%B6%E9%97%B4%E9%80%89%E6%8B%A9%E9%97%AE%E9%A2%98/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/10/1076%20Forwards%20on%20Weibo%20(30%E5%88%86)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">1076 Forwards on Weibo (30分)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -255,744 +341,14 @@
 
 
 
-
   
-    <article id="post-1076 Forwards on Weibo (30分)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/10/1076%20Forwards%20on%20Weibo%20(30%E5%88%86)/">1076 Forwards on Weibo (30分)</a>
-    </h1>
   
 
-        
-        <a href="/2020/03/10/1076%20Forwards%20on%20Weibo%20(30%E5%88%86)/" class="archive-article-date">
-  	<time datetime="2020-03-10T08:51:37.136Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="题意分析"><a href="#题意分析" class="headerlink" title="题意分析"></a>题意分析</h3><p>给出每个用户关注的人，问如果给定的人发了一条微博，在所给的最大转发层数下，最多有多少个人会转发。注意给出的是每个用户关注的人，而不是关注该用户的人。</p>
-<p>注意这道题用BFS很容易，用DFS也可以但容易出问题，后面将作详细分析。</p>
-<h3 id="广度优先遍历"><a href="#广度优先遍历" class="headerlink" title="广度优先遍历"></a>广度优先遍历</h3><p>定义一个level数组，表示每个用户转发时的当前转发层数，当转发层数到达给定的最大转发层数时，跳出循环。定义一个visit数组表示每个用户是否已经访问过，确保每个用户只被访问一次。然后利用广度优先遍历的算法进行搜索即可。</p>
-<p>代码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1000</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;g[maxn];</span><br><span class="line"><span class="keyword">int</span> N, L;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> u)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> ans = <span class="number">0</span>, level[N + <span class="number">1</span>] = &#123;<span class="number">0</span>&#125;; <span class="comment">//level表示用户转发时所处的转发层数</span></span><br><span class="line">	<span class="keyword">bool</span> vis[N + <span class="number">1</span>] = &#123;<span class="literal">false</span>&#125;;</span><br><span class="line">	<span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt;q;</span><br><span class="line">	q.push(u);</span><br><span class="line">	vis[u] = <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">while</span> (!q.empty()) &#123;</span><br><span class="line">		<span class="keyword">int</span> t = q.front();</span><br><span class="line">		q.pop();</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">auto</span> i : g[t]) &#123;</span><br><span class="line">			<span class="keyword">if</span> (!vis[i] &amp;&amp; level[t] &lt; L) &#123;</span><br><span class="line">				ans++;</span><br><span class="line">				level[i] = level[t] + <span class="number">1</span>;</span><br><span class="line">				vis[i] = <span class="literal">true</span>;</span><br><span class="line">				q.push(i);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addEdgr</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">	g[u].push_back(v);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; N &gt;&gt; L;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> u = <span class="number">1</span>; u &lt;= N; ++u) &#123;</span><br><span class="line">		<span class="keyword">int</span> M, v;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; M;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; M; ++j) &#123;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; v;</span><br><span class="line">			addEdgr(v, u);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> K, id;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; K;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; K; ++i) &#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; id;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; bfs(id) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="深度优先遍历"><a href="#深度优先遍历" class="headerlink" title="深度优先遍历"></a>深度优先遍历</h3><p>这道题使用深度优先遍历比使用广度优先遍历要复杂一些，原因在于对于一个在第 i 层访问到的用户来说，如果此时达到转发层数上限，就无法继续遍历了，然而如果该用户可以通过另一条更短的途径访问到，就可以继续深度遍历。比如样例输入：</p>
-<p><img src="https://i.loli.net/2020/03/10/mKUa3QocwLXYSE9.png" alt="20180428181748912.png"></p>
-<p>如果转发层数上限为3，当6号用户发布微博时，先按6-&gt;3-&gt;1-&gt;4路径遍历，此时4号用户达到了转发层数上限，不再进行转发；但是按6-&gt;3-&gt;4-&gt;5的路径遍历，4号用户是可以继续遍历到5号的。<strong>但是如果先按第一条路径遍历的话，此时4号已经被访问过，当第二条路径到达4号用户时，不再继续进行遍历，这样的话就丢失了5号用户</strong>，使得答案错误。</p>
-<p>那么怎么解决上述问题呢？一种方法是暴力搜索给定转发层数内所有的路径，允许同一个节点被访问多次，同时建立一个辅助数组visit，元素全都初始化为false，将路径经过的用户所对应的的数组中的元素置true，暴力搜索结束后，计算出visit内所有为true的元素个数-1即为所求（发布博客的用户本身不算转发，所以要减去1）。该算法的c++代码（为方便后面称呼，不妨叫做第一份代码）如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1000</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; g[maxn];</span><br><span class="line"><span class="keyword">bool</span> vis[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> level)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (level &lt; <span class="number">0</span>)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	vis[u] = <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; g[u].<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">		dfs(g[u][i], level - <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addEdgr</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">	g[u].push_back(v);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> N, L;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; N &gt;&gt; L;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> u = <span class="number">1</span>; u &lt;= N; ++u) &#123;</span><br><span class="line">		<span class="keyword">int</span> M, v;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; M;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; M; ++j) &#123;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; v;</span><br><span class="line">			addEdgr(v, u);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> K, id;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; K;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; K; ++i) &#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; id;</span><br><span class="line">		<span class="built_in">memset</span>(vis, <span class="literal">false</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">		dfs(id, L);</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; count(vis + <span class="number">1</span>, vis + N + <span class="number">1</span>, <span class="literal">true</span>) - <span class="number">1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>显然这种方法时间复杂度是非常高的，评测结果也说明了这一点：</p>
-<table>
-<thead>
-<tr>
-<th>测试点</th>
-<th>结果</th>
-<th>用时(ms)</th>
-<th>内存(kB)</th>
-<th>得分/满分</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0</td>
-<td><font color=red>答案正确</font></td>
-<td>2</td>
-<td>384</td>
-<td>18/18</td>
-</tr>
-<tr>
-<td>1</td>
-<td><font color=red>答案正确</font></td>
-<td>2</td>
-<td>352</td>
-<td>5/5</td>
-</tr>
-<tr>
-<td>2</td>
-<td><font color=red>答案正确</font></td>
-<td>1</td>
-<td>364</td>
-<td>2/2</td>
-</tr>
-<tr>
-<td>3</td>
-<td><font color=red>答案正确</font></td>
-<td>2</td>
-<td>264</td>
-<td>2/2</td>
-</tr>
-<tr>
-<td>4</td>
-<td><font color=green>运行超时</font></td>
-<td></td>
-<td></td>
-<td>0/3</td>
-</tr>
-</tbody></table>
-<p>那么有什么方法可以降低时间复杂度吗？我由样例想到了一种更好的算法，正如我前面所说的，先按6-&gt;3-&gt;1-&gt;4路径遍历时，4号用户已经被遍历过，造成了按6-&gt;3-&gt;4-&gt;5的路径遍历时无法从4号访问到5号。由此受到启发，我在前面所叙述的暴力搜索算法中做了一些修改，为了降低时间复杂度，仍要保证每个结点只能被访问一次，除了按某个路径遍历到的最后一个用户，以保证其他路径搜索到该用户时仍可以继续向下遍历，按样例来说就是当按6-&gt;3-&gt;1-&gt;4路径遍历到4时不把visit[4]置为true，使得按6-&gt;3-&gt;4-&gt;5的路径遍历时仍可以从4号访问到5号。各位对比着前面的第一份代码，看经过修改了的第二份c++代码应该更容易理解：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> N,L,K;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; graph[<span class="number">1005</span>];<span class="comment">//图</span></span><br><span class="line"><span class="keyword">bool</span> visit[<span class="number">1005</span>],person[<span class="number">1005</span>];<span class="comment">//visit表示是否已被访问，person用于最后统计</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFS</span><span class="params">(<span class="keyword">int</span> v,<span class="keyword">int</span> level)</span></span>&#123;</span><br><span class="line">    person[v]=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">if</span>(level==L)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    visit[v]=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i:graph[v])</span><br><span class="line">        <span class="keyword">if</span>(!visit[i])<span class="comment">//保证每个用户只被访问一次，除了使得按某个路径遍历到的最后一个用户</span></span><br><span class="line">            DFS(i,level+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;N,&amp;L);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=N;++i)&#123;</span><br><span class="line">        <span class="keyword">int</span> num,a;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;num);</span><br><span class="line">        <span class="keyword">while</span>(num--)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a);</span><br><span class="line">            graph[a].push_back(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;K);</span><br><span class="line">    <span class="keyword">while</span>(K--)&#123;</span><br><span class="line">        <span class="built_in">fill</span>(visit+<span class="number">1</span>,visit+N+<span class="number">1</span>,<span class="literal">false</span>);</span><br><span class="line">        <span class="built_in">fill</span>(person+<span class="number">1</span>,person+N+<span class="number">1</span>,<span class="literal">false</span>);</span><br><span class="line">        <span class="keyword">int</span> a;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a);</span><br><span class="line">        DFS(a,<span class="number">0</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,count(person+<span class="number">1</span>,person+N+<span class="number">1</span>,<span class="literal">true</span>)<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>评测结果为：</p>
-<table>
-<thead>
-<tr>
-<th>测试点</th>
-<th>结果</th>
-<th>用时(ms)</th>
-<th>内存(kB)</th>
-<th>得分/满分</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0</td>
-<td><font color=red>答案正确</font></td>
-<td>2</td>
-<td>384</td>
-<td>18/18</td>
-</tr>
-<tr>
-<td>1</td>
-<td><font color=red>答案正确</font></td>
-<td>2</td>
-<td>352</td>
-<td>5/5</td>
-</tr>
-<tr>
-<td>2</td>
-<td><font color=red>答案正确</font></td>
-<td>1</td>
-<td>364</td>
-<td>2/2</td>
-</tr>
-<tr>
-<td>3</td>
-<td><font color=red>答案正确</font></td>
-<td>2</td>
-<td>264</td>
-<td>2/2</td>
-</tr>
-<tr>
-<td>4</td>
-<td><font color=red>答案正确</font></td>
-<td>405</td>
-<td>1000</td>
-<td>0/3</td>
-</tr>
-</tbody></table>
-<p>完美的通过了所有的样例，但是刚才所说的算法就是正确的吗？我想到这样一组输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">7 4</span><br><span class="line">1 6</span><br><span class="line">1 6</span><br><span class="line">1 1</span><br><span class="line">2 2 3</span><br><span class="line">1 4</span><br><span class="line">0</span><br><span class="line">1 5</span><br><span class="line">1 6</span><br></pre></td></tr></table></figure>
-<p>画成图形是这个样子：<br><img src="https://i.loli.net/2020/03/10/sVlAXenZ3YEmioU.png" alt="2018042819475769.png"></p>
-<p>如果6号发布微博，转发层数上限为4层的话，大家可以依靠图形自行计算一下4层内能够遍历的用户个数，很明显是6，但是按照第二份代码，得出的结果却是5。我又使用广度优先遍历的代码测试了一下得出的结果依然是6。显然6是正确答案，那么第二份代码错在哪里呢？上面的输入有两条路径：6-&gt;1-&gt;3-&gt;4-&gt;5和6-&gt;2-&gt;4-&gt;5-&gt;7，在第二份代码的运行过程中先遍历的是6-&gt;1-&gt;3-&gt;4-&gt;5路径，此时1、3、4都被访问了一次，5虽然被访问了一次当后续再被访问时仍可继续向下遍历，但是1、3、4不可以。这样在遍历6-&gt;2-&gt;4-&gt;5-&gt;7路径访问到4这个节点时，就没有办法再向下遍历到5了，以至于最后只访问到1、 3、 4、 5、2这5个用户，所以得出了错误结果。究其原因，还是在于第二份代码只保证了每条路径的最后一个用户在被其他路径访问到时继续向下遍历，一旦其他路径遍历到的是不是最后一个用户而是其他用户，这个算法就会出错。但是pat给出的测试点中没有测试这个点，所以第二份代码虽然是错误的代码，仍通过了所有测试用例。</p>
-<p>那么有没有正确的代码呢？我又思考了一下，发现可以这样，为了避免上述问题，每个结点不可避免的要被多次访问，但是又要设置某些限制条件进行剪枝，那么遍历的条件可以这样设置：借鉴于广度优先遍历的方法，可以设置一个数组layer存储每个结点被遍历到时的层数，<strong>每个结点要想继续进行深度优先遍历，要么这个节点以前从未访问过，要么这个节点当前被访问时的层数小于layer数组中对应的层数</strong>，整个第三份c++代码如下所示：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1000</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; g[maxn];</span><br><span class="line"><span class="keyword">bool</span> vis[maxn];  <span class="comment">//vis表示是否已经被访问</span></span><br><span class="line"><span class="keyword">int</span> layer[maxn];  <span class="comment">//储存每个结点被遍历到时的层数</span></span><br><span class="line"><span class="keyword">int</span> N, L;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> level)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (level == L + <span class="number">1</span>)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	vis[u] = <span class="literal">true</span>;  <span class="comment">//当前结点置为已访问</span></span><br><span class="line">	layer[u] = level; <span class="comment">//更新被遍历时所处层数</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> i : g[u]) &#123;</span><br><span class="line">		<span class="keyword">if</span> (!vis[i] || layer[i] &gt; level + <span class="number">1</span>) &#123; <span class="comment">//这个节点以前从未访问过或者这个节点当前被访问时的层数&lt;layer数组中对应的层数</span></span><br><span class="line">			dfs(i, level + <span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addEdgr</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">	g[u].push_back(v);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; N &gt;&gt; L;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> u = <span class="number">1</span>; u &lt;= N; ++u) &#123;</span><br><span class="line">		<span class="keyword">int</span> M, v;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; M;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; M; ++j) &#123;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; v;</span><br><span class="line">			addEdgr(v, u);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> K, id, ans;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; K;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; K; ++i) &#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; id;</span><br><span class="line">		<span class="built_in">memset</span>(vis, <span class="literal">false</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">		<span class="built_in">memset</span>(vis, <span class="number">-1</span>, <span class="keyword">sizeof</span>(layer));</span><br><span class="line">		ans = <span class="number">0</span>;</span><br><span class="line">		dfs(id, <span class="number">0</span>);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N ; ++i)  <span class="comment">//遍历layer数组，元素&gt;0的即为符合条件的人，进行递增</span></span><br><span class="line">			ans += layer[i] &gt; <span class="number">0</span> ? <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>pat测试结果</p>
-<table>
-<thead>
-<tr>
-<th>测试点</th>
-<th>结果</th>
-<th>用时(ms)</th>
-<th>内存(kB)</th>
-<th>得分/满分</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0</td>
-<td><font color=red>答案正确</font></td>
-<td>2</td>
-<td>384</td>
-<td>18/18</td>
-</tr>
-<tr>
-<td>1</td>
-<td><font color=red>答案正确</font></td>
-<td>2</td>
-<td>352</td>
-<td>5/5</td>
-</tr>
-<tr>
-<td>2</td>
-<td><font color=red>答案正确</font></td>
-<td>1</td>
-<td>364</td>
-<td>2/2</td>
-</tr>
-<tr>
-<td>3</td>
-<td><font color=red>答案正确</font></td>
-<td>2</td>
-<td>264</td>
-<td>2/2</td>
-</tr>
-<tr>
-<td>4</td>
-<td><font color=red>答案正确</font></td>
-<td>605</td>
-<td>1008</td>
-<td>0/3</td>
-</tr>
-</tbody></table>
-<p>该算法处理我自己设计的输入得出的也是6这个正确结果</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>在图论中虽然深度优先遍历比广度优先遍历更常用一些，但对于类似于该题目这样的设置了遍历层数上限的题目，广度优先遍历要更加简洁，逻辑也更加清晰。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/10/1076%20Forwards%20on%20Weibo%20(30%E5%88%86)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-一篇文章讲清楚Gradle与Gradle Wrapper的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/06/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E8%AE%B2%E6%B8%85%E6%A5%9AGradle%E4%B8%8EGradle%20Wrapper%E7%9A%84%E5%8C%BA%E5%88%AB/">一篇文章讲清楚Gradle与Gradle Wrapper的区别</a>
-    </h1>
   
 
-        
-        <a href="/2020/03/06/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E8%AE%B2%E6%B8%85%E6%A5%9AGradle%E4%B8%8EGradle%20Wrapper%E7%9A%84%E5%8C%BA%E5%88%AB/" class="archive-article-date">
-  	<time datetime="2020-03-06T11:52:09.986Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Gradle：android用来构建项目的编程框架。这个玩意对于使用AS开发的，大家都清楚，用这个来构建项目变得无比轻松和高可定制性，比如引入第三方依赖，发布到maven库，构建多渠道版本等等都变得非常轻松，所以对于使用Gradle，自然是没有任何异议了，但是大家经常会在自己的项目中没有看见gradle,疑惑Gradle在哪？反而，没找到gradle，却总是能看见一个叫gradle wrapper的玩意，也不知道什么意思。</p>
-<p><img src="https://i.loli.net/2020/03/06/xPWJg9bC56Bdpir.png" alt="20180717170812750.png"><br>如图，找遍整个项目，与gradle有关的就这两个文件夹，却只发现gradle-wrapper.jar。</p>
-<h3 id="wrapper的意思：包装。"><a href="#wrapper的意思：包装。" class="headerlink" title="wrapper的意思：包装。"></a>wrapper的意思：包装。</h3><p>那么可想而已，这是gradle包装。其实是这样的，因为gradle处于快速迭代阶段，经常发布新版本，如果我们的项目直接去引用，那么更改版本等会变得无比麻烦。而且每个项目又有可能用不一样的gradle版本，这样去手动配置每一个项目对应的gradle版本就会变得麻烦，gradle的引入本来就是想让大家构建项目变得轻松，如果这样的话，岂不是又增加了新的麻烦？所以android想到了包装，引入gradle-wrapper，通过读取配置文件中gradle的版本，为每个项目自动的下载和配置gradle，就是这么简单。我们便不用关心如何去下载gradle,如何去配置进项目来。那么gradle wrapper从何而来？看下图</p>
-<p><img src="https://i.loli.net/2020/03/06/OpKwPxG64Zb5Rmh.png" alt="20180717171437123.png"><br><img src="https://i.loli.net/2020/03/06/uBmxaRyGTv19HNK.png" alt="20180717171449610.png"><br>在Android Studio安装的时候便会自带这个功能jar包，并且我们也看到了gradle-wrapper.properties。所以我们就知道了，AS每新建一个项目，就会将个目录下的这两个文件拷入到项目的gradle文件夹下面。</p>
-<p>不知道大家有没有发现还有两个红圈圈住的文件，也是在我们项目根目录下常见的。gradlew是在linux,mac下使用的，gradlew.bat是在window下使用的，提供在命令行下执行gradle命令的功能</p>
-<h3 id="但是有人会疑问为什么直接执行gradle的命令，而是执行gradlew的命令？"><a href="#但是有人会疑问为什么直接执行gradle的命令，而是执行gradlew的命令？" class="headerlink" title="但是有人会疑问为什么直接执行gradle的命令，而是执行gradlew的命令？"></a>但是有人会疑问为什么直接执行gradle的命令，而是执行gradlew的命令？</h3><p>因为就像wrapper本身的意义，gradle命令行也是善变的，所以wrapper对命令行也进行了一层封装，使用同一的gradlew命令，wrapper会自动去执行具体版本对应的gradle命令。。</p>
-<p><font color=red>那么gradle-wrapper.jar具体下载的gradle去哪了？</font></p>
-<p><img src="https://i.loli.net/2020/03/06/G6JqMwxhUQCy3LA.png" alt="20180717172218911.png"><br>一般在用户目录下的.gradle/wrapper/dists存放</p>
-<h3 id="那么我们如何去修改要下载的gradle版本呢？"><a href="#那么我们如何去修改要下载的gradle版本呢？" class="headerlink" title="那么我们如何去修改要下载的gradle版本呢？"></a>那么我们如何去修改要下载的gradle版本呢？</h3><p>相比有时候大家也为了AS去下载gradle但下载不下来一直卡着而烦恼。<br><img src="https://i.loli.net/2020/03/06/Vo8RAQgcUdEHjNq.png" alt="20180717173226807.png"><br>distributionUrl:要下载的gradle地址以及版本，gradle-wrapper会去wrapper/list目录下查找，如果没有对应版本的gradle采取下载，所以如果我们卡顿下载不下来，我们可以先去找国内的镜像网站下载下来，自己放入哪个文件夹，便可。</p>
-<p>gradle的3种版本：</p>
-<p>gradle-xx-all.zip是完整版，包含了各种二进制文件，源代码文件，和离线的文档。例如，<a href="https://services.gradle.org/distributions/gradle-3.1-all.zip" target="_blank" rel="noopener">https://services.gradle.org/distributions/gradle-3.1-all.zip</a></p>
-<p>gradle-xx-bin.zip是二进制版，只包含了二进制文件（可执行文件），没有文档和源代码。例如，<a href="https://services.gradle.org/distributions/gradle-3.1-bin.zip" target="_blank" rel="noopener">https://services.gradle.org/distributions/gradle-3.1-bin.zip</a></p>
-<p>gradle-xx-src.zip是源码版，只包含了Gradle源代码，不能用来编译你的工程。例如，<a href="https://services.gradle.org/distributions/gradle-3.1-src.zip" target="_blank" rel="noopener">https://services.gradle.org/distributions/gradle-3.1-src.zip</a></p>
-<h3 id="那么其他的四个属性呢？就是指定下载的gradle存放的路径"><a href="#那么其他的四个属性呢？就是指定下载的gradle存放的路径" class="headerlink" title="那么其他的四个属性呢？就是指定下载的gradle存放的路径"></a>那么其他的四个属性呢？就是指定下载的gradle存放的路径</h3><p>各项属性的整体含义，如下：</p>
-<ul>
-<li>（1） 去 <a href="https://services.gradle.org/distributions/gradle-3.1-bin.zip" target="_blank" rel="noopener">https://services.gradle.org/distributions/gradle-3.1-bin.zip</a> 下载gradle的3.1版本，只包含binary的版本。</li>
-<li>（2） 下载的gradle-3.1-bin.zip存放到C:\Users&lt;user_name&gt;.gradle\wrapper\dists目录中。<br>（注：具体还有2级目录，即全路径为C:\Users&lt;user_name&gt;.gradle\wrapper\dists\gradle-3.1-bin&lt;url-hash&gt;\，gradle-3.1-bin目录是根据下载的gradle的文件名来定的，<url-hash>目录名是根据distribution url路径字符串计算md5值得来的，具体参考PathAssembler.java中的rootDirName()和getHash()，PathAssembler.java的位置见本文最后的参考路径）</li>
-<li>（3） 解压gradle-3.1-bin.zip，将解压后的文件存放到C:\Users&lt;user_name&gt;.gradle\wrapper\dists中。（注：具体还有2级目录，同上）</li>
-</ul>
-<p>说到这里大家应该知道了gradle与gradle wrapper的关系了吧。以及项目中的种种gradle-wrapper是哪里来的，gradle到底又是在哪，有了很清楚的了解了吧。最后还有一个东西说一下，  .gradle文件夹，就是那个跟项目第一个文件夹，带点的那个。那个对我们没什么用，他是gradle运行的时候产生的一些记录性的文件。我们不需要关注。</p>
-<p>gradle-wrapper.perporties文件属性的解释参考如下：</p>
-<p>参考：<a href="https://blog.csdn.net/u013553529/article/details/55011602" target="_blank" rel="noopener">https://blog.csdn.net/u013553529/article/details/55011602</a></p>
-<p>参考：<a href="https://www.cnblogs.com/jiangxinnju/p/8229129.html" target="_blank" rel="noopener">https://www.cnblogs.com/jiangxinnju/p/8229129.html</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/06/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E8%AE%B2%E6%B8%85%E6%A5%9AGradle%E4%B8%8EGradle%20Wrapper%E7%9A%84%E5%8C%BA%E5%88%AB/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-1119 Pre- and Post-order Traversals (30分)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/05/1119%20Pre-%20and%20Post-order%20Traversals%20(30%E5%88%86)/">1119 Pre- and Post-order Traversals (30分)</a>
-    </h1>
   
 
-        
-        <a href="/2020/03/05/1119%20Pre-%20and%20Post-order%20Traversals%20(30%E5%88%86)/" class="archive-article-date">
-  	<time datetime="2020-03-05T14:17:04.357Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>题目大意：给出一棵树的结点个数n，以及它的前序遍历和后序遍历，输出它的中序遍历，如果中序遍历不唯一就输出No，且输出其中一个中序即可，如果中序遍历唯一就输出Yes，并输出它的中序</p>
-<p>主要是如何判断结果是否唯一，已知二叉树的前序和后序是无法唯一确定一颗二叉树的，因为可能会存在多种情况。当只有一个孩子节点的时候，无法判断这个孩子节点是左孩子还是右孩子</p>
-<p>先查看中序遍历是否唯一，先序遍历顺序为：根左右，后序遍历顺序为：左右根，那么如果一个节点只包含左子节点或者只包含右子节点，但是根据上面的顺序可以发现，他们的先序遍历和后续遍历是没有发生变化的，例如：</p>
-<p><img src="https://i.loli.net/2020/03/05/HOCzKonSWIEtUf5.png" alt="20190301161354433.png">)<img src="https://i.loli.net/2020/03/05/HOCzKonSWIEtUf5.png" alt="20190301161354433.png">)<img src="https://i.loli.net/2020/03/05/HOCzKonSWIEtUf5.png" alt="20190301161354433.png"></p>
-<p>此图中节点1，节点3，只含有左子节点或者右子节点，但是他们的先序遍历和后续遍历都是相同的：</p>
-<p>先序遍历：1 2 5 3 4</p>
-<p>后序遍历：5 4 3 2 1</p>
-<p><strong>所以只要父亲节点只包含一个子节点，那么这个答案就是不唯一的</strong></p>
-<p>后序遍历和先序遍历得到中序遍历（例一为例）</p>
-<p><img src="https://i.loli.net/2020/03/05/jFwO1GVPpbNIHzu.png" alt="20190301162154255.png"></p>
-<p>先序遍历： 1 2 3 4 6 7 5       后序遍历： 2 6 7 4 5 3 1</p>
-<p>在先序遍历中先取出开始的节点1，这个节点定为当前根节点，1后面一个节点2一定是节点1的一个子节点，然后在后序遍历中寻找节点2，于是便可知节点2（包括2）之前的位于节点1的左子树中，2（不包括2）后面的节点直至节点1，位于节点1的右子树</p>
-<p>节点2 3 6 7 5位于节点1的右子树中，根据先序遍历可知3为这个子树的根节点，节点4为节点3的左或右子节点中的一个，后序遍历中找到节点4，可以知道节点6 7 4位于节点3的左子树中，节点5位于节点3的右子树中</p>
-<p>依次类推，可以遍历完这棵树，于是便可得到中序遍历</p>
-<p>如果上述中找到只包含一个子节点的父节点，没有发现另外一个节点，<strong>即当前遍历区间中只包含当前节点的一个子节点</strong>，说明这个树是不唯一的，我们默认情况下将其安排在左子节点中</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">30</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> pre[maxn], post[maxn];</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; in;</span><br><span class="line"><span class="keyword">bool</span> flag;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">in_order</span><span class="params">(<span class="keyword">int</span> preLeft, <span class="keyword">int</span> preRight, <span class="keyword">int</span> postLeft, <span class="keyword">int</span> postRight)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (preLeft == preRight) &#123;</span><br><span class="line">		in.push_back(pre[preLeft]);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (pre[preLeft] == post[postRight]) &#123;</span><br><span class="line">		<span class="keyword">int</span> i = preLeft + <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span> (i &lt;= preRight &amp;&amp; pre[i] != post[postRight - <span class="number">1</span>])</span><br><span class="line">			i++;</span><br><span class="line">		<span class="keyword">if</span> (i - preLeft &gt; <span class="number">1</span>) <span class="comment">//父节点有两个子节点，结构唯一</span></span><br><span class="line">			in_order(preLeft + <span class="number">1</span>, i - <span class="number">1</span>, postLeft, postLeft + (i - preLeft - <span class="number">1</span>) - <span class="number">1</span>); <span class="comment">//左子树</span></span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (i - preLeft == <span class="number">1</span>) <span class="comment">//父节点有一个子节点，则可左可右，结构不唯一</span></span><br><span class="line">			flag = <span class="literal">false</span>;</span><br><span class="line">		in.push_back(pre[preLeft]);  <span class="comment">//根节点</span></span><br><span class="line">		in_order(i, preRight, postLeft + (i - preLeft - <span class="number">1</span>), postRight - <span class="number">1</span>);  <span class="comment">//右子树</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> N, i;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i)</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; pre[i];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i)</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; post[i];</span><br><span class="line">	flag = <span class="literal">true</span>;</span><br><span class="line">	in_order(<span class="number">0</span>, N - <span class="number">1</span>, <span class="number">0</span>, N - <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">if</span> (flag)</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"Yes"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"No"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; N - <span class="number">1</span>; ++i)</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; in[i] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; in[i] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/05/1119%20Pre-%20and%20Post-order%20Traversals%20(30%E5%88%86)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-bean的生命周期" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/05/bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">bean的生命周期</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/05/bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="archive-article-date">
-  	<time datetime="2020-03-05T07:34:39.139Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://i.loli.net/2020/03/05/BkOCdqahDGX9W1i.png" alt="批注 2020-03-05 151808.png"></p>
-<ol>
-<li>Spring对bean进行实例化;</li>
-<li>Spring捋值和bean的引用注入到bean对应的属性中;</li>
-<li>如果bean实现了 BeanNameAware接口, Spring浮bean的传递给setbean-Name()方法;</li>
-<li>如果bean实现了 BeanFactoryAware接口,Spring将调用setBeanFactory()方法,将BeanFactory容器实例传入</li>
-<li>如果bean实现了 ApplicationContextAware接口,Spring将调用setApplicationContext()方法,将bean所在的应用上下文的引用传入进来;</li>
-<li>如果bean实现了 BeanPostProcessor接口,Spring捋调用它们的postProcessBeforeInitialization()方法</li>
-<li>如果bean实现了 InitializingBean接口,Spring将调用它们的afterPropertiesSet()方法。类似地,如果bean使用init- method声明了初始化方法,该方法也会被调用;</li>
-<li>如果bean实现了 BeanPostProcessor接口,Spring捋调用它们的postProcessAfterInitialization()方法;</li>
-<li>此时,bean已经准备就绪,可以被应用程序使用了,它们捋一直驻留在应用上下文中,直到该应用上下文被销毁</li>
-<li>如果bean实现了Disposablebean接口,Spring捋调用它的 destroy()接囗方法。同样如果bean使用destroy- method声明了销毁方法,该方法也会被调用。</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/05/bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-1064 Complete Binary Search Tree (30分)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/04/1064%20Complete%20Binary%20Search%20Tree%20(30%E5%88%86)/">1064 Complete Binary Search Tree (30分)</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/04/1064%20Complete%20Binary%20Search%20Tree%20(30%E5%88%86)/" class="archive-article-date">
-  	<time datetime="2020-03-04T01:31:02.291Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>主要是一开始没弄清题目中完全二叉树的定义</p>
-<p>思路：</p>
-<p>一棵排序二叉树的中序遍历就是这一组数的递增序列。这边是完全二叉树，假设从0开始，那么节点i的左孩子的标号就是2<em>i+1，右孩子的标号就是2</em>(i+1)。先将这组数按照递增来排序，然后用中序遍历复原这棵完全排序二叉树，最后直接输出。</p>
-<blockquote>
-<p>完全二叉树：任何一个节点编号x，则左孩子节点为2x，右孩子节点为2x+1<br>可以使用一个数组存储，从1到n<br>结论：该数组中元素存放的顺序为该二叉树的层序遍历序列</p>
-<p>利用完全二叉树建立结构，中序遍历填入元素</p>
-</blockquote>
-<p><img src="https://i.loli.net/2020/03/04/X2rieZHWd7UNMEK.png" alt="clipboard.png"></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1000</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[maxn], ans[maxn], cnt, N, i;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">in_order</span><span class="params">(<span class="keyword">int</span> root)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (root &gt; N)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	in_order(root * <span class="number">2</span>);</span><br><span class="line">	ans[root] = a[cnt++];</span><br><span class="line">	in_order(root * <span class="number">2</span> + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; N; ++i)</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">	sort(a, a + N);</span><br><span class="line">	cnt = <span class="number">0</span>;</span><br><span class="line">	in_order(<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= N - <span class="number">1</span>; ++i)</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; ans[i] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; ans[i] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/04/1064%20Complete%20Binary%20Search%20Tree%20(30%E5%88%86)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-1094 The Largest Generation (25分)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/02/1094%20The%20Largest%20Generation%20(25%E5%88%86)/">1094 The Largest Generation (25分)</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/02/1094%20The%20Largest%20Generation%20(25%E5%88%86)/" class="archive-article-date">
-  	<time datetime="2020-03-02T03:50:29.787Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>树的遍历<br><br>题意：给出谱系图（多叉树)，求最多孩子的那一层的深度和宽度。</p>
-<p>DFS遍历，记录每层的宽度，找最大的那个即可<br><br>也可以用BFS做</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">100</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; tree[maxn];</span><br><span class="line"><span class="keyword">int</span> level[maxn];</span><br><span class="line"><span class="keyword">bool</span> vis[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFS</span><span class="params">(<span class="keyword">int</span> root, <span class="keyword">int</span> cnt)</span> </span>&#123;</span><br><span class="line">	level[cnt]++;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tree[root].<span class="built_in">size</span>(); ++i)</span><br><span class="line">		DFS(tree[root][i], cnt + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> N, M, j = <span class="number">1</span>, cnt = <span class="number">0</span>, ans, root;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; N &gt;&gt; M;</span><br><span class="line">	<span class="built_in">memset</span>(vis, <span class="literal">false</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; M; ++i) &#123;</span><br><span class="line">		<span class="keyword">int</span> ID, K, t;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; ID &gt;&gt; K;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; K; ++j) &#123;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">			tree[ID].push_back(t);</span><br><span class="line">			vis[t] = <span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) &#123;</span><br><span class="line">		<span class="keyword">if</span> (!vis[i]) &#123;</span><br><span class="line">			root = i;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	DFS(root, <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">while</span> (level[j] != <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (level[j] &gt; cnt) &#123;</span><br><span class="line">			ans = j;</span><br><span class="line">			cnt = level[j];</span><br><span class="line">		&#125;</span><br><span class="line">		j++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; cnt &lt;&lt; <span class="string">" "</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/02/1094%20The%20Largest%20Generation%20(25%E5%88%86)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-My-First-Post" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/22/My-First-Post/">My First Post</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/22/My-First-Post/" class="archive-article-date">
-  	<time datetime="2020-01-22T12:59:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Hello-This-is-my-first-post"><a href="#Hello-This-is-my-first-post" class="headerlink" title="Hello This is my first post"></a>Hello This is my first post</h2>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/22/My-First-Post/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/22/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/22/hello-world/" class="archive-article-date">
-  	<time datetime="2020-01-22T07:52:45.957Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/22/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -1015,8 +371,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
