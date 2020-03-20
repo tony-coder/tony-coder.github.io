@@ -76,6 +76,8 @@
 	        
 				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 	        
+				<li><a href="/photos">相册</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -96,7 +98,7 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/tony-coder" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
@@ -132,12 +134,14 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/tony-coder" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 			        
@@ -149,12 +153,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/photos">相册</a></li>
 		        
 				</ul>
 			</nav>
@@ -178,13 +184,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/18/%E7%BA%BF%E6%80%A7%E6%97%B6%E9%97%B4%E9%80%89%E6%8B%A9%E9%97%AE%E9%A2%98/">线性时间选择问题</a>
+      <a class="article-title" href="/2020/03/20/%E7%BA%BF%E6%80%A7%E6%97%B6%E9%97%B4%E9%80%89%E6%8B%A9%E9%97%AE%E9%A2%98/">线性时间选择问题</a>
     </h1>
   
 
         
-        <a href="/2020/03/18/%E7%BA%BF%E6%80%A7%E6%97%B6%E9%97%B4%E9%80%89%E6%8B%A9%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-03-18T14:57:44.349Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-18</time>
+        <a href="/2020/03/20/%E7%BA%BF%E6%80%A7%E6%97%B6%E9%97%B4%E9%80%89%E6%8B%A9%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2020-03-20T13:26:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-20</time>
 </a>
         
       </header>
@@ -192,8 +198,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>元素选择问题(Select)：对于给定的包含n个元素的线性序集和一个整数k，1≤k≤n，找出这n个元素中第k小的元素。</p>
-<p>1) 基本思路：先排序(如：快速排序)，后查找。</p>
-<p>2) 改进思路：由于只需要查找第k小的元素，故只要递归查找划分后的某个分区即可，而无需全部排序。</p>
+<p>1)基本思路：先排序(如：快速排序)，后查找。</p>
+<p>2)改进思路：由于只需要查找第k小的元素，故只要递归查找划分后的某个分区即可，而无需全部排序。</p>
 <p>元素选择问题的主程序</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">Type</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">Type</span> <span class="title">RandomizedSelect</span>(<span class="title">Type</span> <span class="title">a</span>[], <span class="title">int</span> <span class="title">p</span>, <span class="title">int</span> <span class="title">r</span>, <span class="title">int</span> <span class="title">k</span>)</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">      <span class="keyword">if</span> (p==r) <span class="keyword">return</span> a[p];</span><br><span class="line">      <span class="keyword">int</span> i=RandomizedPartition(a,p,r),</span><br><span class="line">      j=i-p+<span class="number">1</span>;</span><br><span class="line">      <span class="keyword">if</span> (k&lt;=j) <span class="keyword">return</span> RandomizedSelect(a,p,i,k);</span><br><span class="line">      <span class="keyword">else</span> <span class="keyword">return</span> RandomizedSelect(a,i+<span class="number">1</span>,r,k-j);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -202,8 +208,8 @@
 <p>示例：</p>
 <pre><code>若ε=9/10，则算法递归调用所产生的子数组的长度至少缩短1/10。故在最坏情况下，算法所需的计算时间T(n)满足递归式：T(n)≤T(9n/10)+O(n) 。
 由此可得T(n)=O(n)。</code></pre><p>选择算法的改进：Select分治策略(查找满足要求的划分标准，假设所有元素互不相同)：</p>
-<p>1)将n个元素划分成 <code>$ \lceil n/5 \rceil $</code>个组，每组5个元素，只可能有一个组不是5个元素。用任意一种排序算法，将每组中的元素排好序，并取出每组的中位数，共 <code>$ \lceil n/5 \rceil $</code>个。</p>
-<p>2)递归调用Select来找出这 <code>$ \lceil n/5 \rceil $</code>个元素的中位数。如果 <code>$ \lceil n/5 \rceil $</code> 是偶数，则找它的2个中位数中较大的元素作为划分基准。<br><img src="https://i.loli.net/2020/03/18/Q24YKy8mU6BiqaG.png" alt="图片1.png"></p>
+<p>1)将n个元素划分成 $ \lceil n/5 \rceil $ 个组，每组5个元素，只可能有一个组不是5个元素。用任意一种排序算法，将每组中的元素排好序，并取出每组的中位数，共 <code>$ \lceil n/5 \rceil $</code>个。</p>
+<p>2)递归调用Select来找出这 <code>$ \lceil n/5 \rceil $</code>个元素的中位数。如果 <code>$ \lceil n/5 \rceil $</code> 是偶数，则找它的2个中位数中较大的元素作为划分基准。</p>
 <p>选择算法的改进：Select分治策略<br><img src="https://i.loli.net/2020/03/18/Q24YKy8mU6BiqaG.png" alt="图片1.png"></p>
 <p>查找满足要求的划分标准的步骤如下（假设所有元素互不相同）：</p>
 <p>1)这种情况下找出的基准x至少比3(n-5)/10个元素大，因为在每一组中有2个元素小于本组的中位数，而n/5个中位数中又有(n-5)/10个小于基准x。</p>
@@ -223,11 +229,26 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分治</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/18/%E7%BA%BF%E6%80%A7%E6%97%B6%E9%97%B4%E9%80%89%E6%8B%A9%E9%97%AE%E9%A2%98/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/03/20/%E7%BA%BF%E6%80%A7%E6%97%B6%E9%97%B4%E9%80%89%E6%8B%A9%E9%97%AE%E9%A2%98/">展开全文 >></a>
         </p>
       
 
@@ -448,6 +469,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">PAT刷题记录</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -533,6 +565,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">构建工具</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -611,6 +654,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">PAT刷题记录</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -686,6 +740,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -757,6 +826,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">PAT刷题记录</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -822,6 +902,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">PAT刷题记录</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -1084,6 +1175,30 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">分治</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">PAT刷题记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">构建工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -1134,27 +1249,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="https://github.com/tony-coder" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>GitHub</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="https://blog.csdn.net/weixin_42023723" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>CSDN</a>
             </li>
           
         </ul>
