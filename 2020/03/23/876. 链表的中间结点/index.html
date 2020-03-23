@@ -6,22 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>1064 Complete Binary Search Tree (30分) | 鲍锋雄的博客</title>
+  <title>876. 链表的中间结点 | 鲍锋雄的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="主要是一开始没弄清题目中完全二叉树的定义 思路： 一棵排序二叉树的中序遍历就是这一组数的递增序列。这边是完全二叉树，假设从0开始，那么节点i的左孩子的标号就是2i+1，右孩子的标号就是2(i+1)。先将这组数按照递增来排序，然后用中序遍历复原这棵完全排序二叉树，最后直接输出。  完全二叉树：任何一个节点编号x，则左孩子节点为2x，右孩子节点为2x+1可以使用一个数组存储，从1到n结论：该数组中元素">
+  <meta name="description" content="876. 链表的中间结点 给定一个带有头结点 head 的非空单链表，返回链表的中间结点。如果有两个中间结点，则返回第二个中间结点。 示例 1： 12345输入：[1,2,3,4,5]输出：此列表中的结点 3 (序列化形式：[3,4,5])返回的结点值为 3 。 (测评系统对该结点序列化表述是 [3,4,5])。注意，我们返回了一个 ListNode 类型的对象 ans，这样：ans.val &amp;#">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1064 Complete Binary Search Tree (30分)">
-<meta property="og:url" content="http://yoursite.com/2020/03/04/1064%20Complete%20Binary%20Search%20Tree%20(30%E5%88%86)/index.html">
+<meta property="og:title" content="876. 链表的中间结点">
+<meta property="og:url" content="http://yoursite.com/2020/03/23/876.%20%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E7%BB%93%E7%82%B9/index.html">
 <meta property="og:site_name" content="鲍锋雄的博客">
-<meta property="og:description" content="主要是一开始没弄清题目中完全二叉树的定义 思路： 一棵排序二叉树的中序遍历就是这一组数的递增序列。这边是完全二叉树，假设从0开始，那么节点i的左孩子的标号就是2i+1，右孩子的标号就是2(i+1)。先将这组数按照递增来排序，然后用中序遍历复原这棵完全排序二叉树，最后直接输出。  完全二叉树：任何一个节点编号x，则左孩子节点为2x，右孩子节点为2x+1可以使用一个数组存储，从1到n结论：该数组中元素">
+<meta property="og:description" content="876. 链表的中间结点 给定一个带有头结点 head 的非空单链表，返回链表的中间结点。如果有两个中间结点，则返回第二个中间结点。 示例 1： 12345输入：[1,2,3,4,5]输出：此列表中的结点 3 (序列化形式：[3,4,5])返回的结点值为 3 。 (测评系统对该结点序列化表述是 [3,4,5])。注意，我们返回了一个 ListNode 类型的对象 ans，这样：ans.val &amp;#">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://i.loli.net/2020/03/04/X2rieZHWd7UNMEK.png">
-<meta property="article:published_time" content="2020-03-04T01:31:02.291Z">
-<meta property="article:modified_time" content="2020-03-20T13:28:59.869Z">
+<meta property="og:image" content="https://i.loli.net/2020/03/23/fIzFs48REqXnGKU.png">
+<meta property="article:published_time" content="2020-03-23T14:44:27.130Z">
+<meta property="article:modified_time" content="2020-03-23T14:44:27.130Z">
 <meta property="article:author" content="bfx">
-<meta property="article:tag" content="PAT刷题记录">
+<meta property="article:tag" content="Leetcode">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2020/03/04/X2rieZHWd7UNMEK.png">
+<meta name="twitter:image" content="https://i.loli.net/2020/03/23/fIzFs48REqXnGKU.png">
   
     <link rel="alternative" href="/atom.xml" title="鲍锋雄的博客" type="application/atom+xml">
   
@@ -163,35 +163,61 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-1064 Complete Binary Search Tree (30分)" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-876. 链表的中间结点" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      1064 Complete Binary Search Tree (30分)
+      876. 链表的中间结点
     </h1>
   
 
         
-        <a href="/2020/03/04/1064%20Complete%20Binary%20Search%20Tree%20(30%E5%88%86)/" class="archive-article-date">
-  	<time datetime="2020-03-04T01:31:02.291Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
+        <a href="/2020/03/23/876.%20%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E7%BB%93%E7%82%B9/" class="archive-article-date">
+  	<time datetime="2020-03-23T14:44:27.130Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>主要是一开始没弄清题目中完全二叉树的定义</p>
-<p>思路：</p>
-<p>一棵排序二叉树的中序遍历就是这一组数的递增序列。这边是完全二叉树，假设从0开始，那么节点i的左孩子的标号就是2<em>i+1，右孩子的标号就是2</em>(i+1)。先将这组数按照递增来排序，然后用中序遍历复原这棵完全排序二叉树，最后直接输出。</p>
-<blockquote>
-<p>完全二叉树：任何一个节点编号x，则左孩子节点为2x，右孩子节点为2x+1<br>可以使用一个数组存储，从1到n<br>结论：该数组中元素存放的顺序为该二叉树的层序遍历序列</p>
-<p>利用完全二叉树建立结构，中序遍历填入元素</p>
-</blockquote>
-<p><img src="https://i.loli.net/2020/03/04/X2rieZHWd7UNMEK.png" alt="clipboard.png"></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1000</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[maxn], ans[maxn], cnt, N, i;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">in_order</span><span class="params">(<span class="keyword">int</span> root)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (root &gt; N)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	in_order(root * <span class="number">2</span>);</span><br><span class="line">	ans[root] = a[cnt++];</span><br><span class="line">	in_order(root * <span class="number">2</span> + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; N; ++i)</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">	sort(a, a + N);</span><br><span class="line">	cnt = <span class="number">0</span>;</span><br><span class="line">	in_order(<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= N - <span class="number">1</span>; ++i)</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; ans[i] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; ans[i] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p><a href="https://leetcode-cn.com/problems/middle-of-the-linked-list/" target="_blank" rel="noopener">876. 链表的中间结点</a></p>
+<p>给定一个带有头结点 head 的非空单链表，返回链表的中间结点。<br>如果有两个中间结点，则返回第二个中间结点。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入：[1,2,3,4,5]</span><br><span class="line">输出：此列表中的结点 3 (序列化形式：[3,4,5])</span><br><span class="line">返回的结点值为 3 。 (测评系统对该结点序列化表述是 [3,4,5])。</span><br><span class="line">注意，我们返回了一个 ListNode 类型的对象 ans，这样：</span><br><span class="line">ans.val &#x3D; 3, ans.next.val &#x3D; 4, ans.next.next.val &#x3D; 5, 以及 ans.next.next.next &#x3D; NULL.</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：[1,2,3,4,5,6]</span><br><span class="line">输出：此列表中的结点 4 (序列化形式：[4,5,6])</span><br><span class="line">由于该列表有两个中间结点，值分别为 3 和 4，我们返回第二个结点。</span><br></pre></td></tr></table></figure>
+
+<p>提示：</p>
+<ul>
+<li>给定链表的结点数介于 1 和 100 之间。</li>
+</ul>
+<p><strong>朴素解法</strong>：这道题最朴素的做法是，先遍历一次，计算链表的长度，进而计算链表中间结点的下标（注意偶数结点的时候，得到的是中间的第二个结点），然后再遍历一次，来到所要求结点的位置。</p>
+<p>缺点：</p>
+<ul>
+<li>必须先遍历完整个链表，然后才可以「干正事」，再遍历到一半，找到中间结点；</li>
+<li>在链表的长度很长的时候，这种方法之前的等待会很久。<br>快慢指针：比较经典的做法是：</li>
+</ul>
+<p><strong>快慢指针</strong>：比较经典的做法是：</p>
+<ul>
+<li>使用两个指针变量，刚开始都位于链表的第 1 个结点，一个永远一次只走 1 步，一个永远一次只走 2 步，一个在前，一个在后，同时走。这样当快指针走完的时候，慢指针就来到了链表的中间位置。</li>
+</ul>
+<p>思想是：快慢指针的前进方向相同，且它们步伐的「差」是恒定的，根据这种确定性去解决链表中的一些问题。</p>
+<ol>
+<li>初始时两个指针均指向头指针。</li>
+<li>如果快指针为空或者快指针的next为空，那么此时慢指针即为答案，移动结束。</li>
+<li>每轮移动，快指针需要移动两次，慢指针需要移动一次。跳转步骤二。</li>
+</ol>
+<p>尝试证明一下：<br>如果链表只有一个元素，那么不会触发移动逻辑，此时慢指针指向head，显然正确。<br>设链表总共有n个元素，且n &gt; 1。当算法结束时，必然进行了 <code>$\lfloor\frac{n}{2}\rfloor$</code> 轮移动。此时慢指针必然指向第 <code>$1+\lfloor\frac{n}{2}\rfloor$</code> 个元素。</p>
+<p>以 [1,2,3,4,5,6] 为例，移动过程如下图：</p>
+<p><img src="https://i.loli.net/2020/03/23/fIzFs48REqXnGKU.png" alt="2c8b8f5f0e663e3c27ee3960e0aae0c6b32d8b3a81c5f6346e1cda4621b415c5-快慢指针.png"></p>
+<p>c++</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">middleNode</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> fast=head,slow=head;</span><br><span class="line">        <span class="keyword">while</span>(fast!=<span class="literal">NULL</span> &amp;&amp; fast-&gt;next!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">            fast=fast-&gt;next-&gt;next;</span><br><span class="line">            slow=slow-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> slow;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">middleNode</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        ListNode fast=head,slow=head;</span><br><span class="line">        <span class="keyword">while</span>(fast!=<span class="keyword">null</span> &amp;&amp; fast.next!=<span class="keyword">null</span>)&#123;</span><br><span class="line">            fast=fast.next.next;</span><br><span class="line">            slow=slow.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> slow;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -226,7 +252,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">PAT刷题记录</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
         		</li>
       		
 		</ul>
@@ -282,7 +308,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/04/1064%20Complete%20Binary%20Search%20Tree%20(30%E5%88%86)/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/23/876.%20%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E7%BB%93%E7%82%B9/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -296,18 +322,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/03/05/bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          bean的生命周期
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/03/02/1094%20The%20Largest%20Generation%20(25%E5%88%86)/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">1094 The Largest Generation (25分)</div>
+    <a href="/2020/03/20/%E7%BA%BF%E6%80%A7%E6%97%B6%E9%97%B4%E9%80%89%E6%8B%A9%E9%97%AE%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">线性时间选择问题</div>
       <i class="icon-circle-right"></i>
     </a>
   
