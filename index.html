@@ -177,6 +177,140 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-945. 使数组唯一的最小增量" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/27/945.%20%E4%BD%BF%E6%95%B0%E7%BB%84%E5%94%AF%E4%B8%80%E7%9A%84%E6%9C%80%E5%B0%8F%E5%A2%9E%E9%87%8F/">876. 链表的中间结点</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/27/945.%20%E4%BD%BF%E6%95%B0%E7%BB%84%E5%94%AF%E4%B8%80%E7%9A%84%E6%9C%80%E5%B0%8F%E5%A2%9E%E9%87%8F/" class="archive-article-date">
+  	<time datetime="2020-03-27T15:53:25.271Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://leetcode-cn.com/problems/minimum-increment-to-make-array-unique" target="_blank" rel="noopener">945. 使数组唯一的最小增量</a></p>
+<p>给定整数数组 A，每次 move 操作将会选择任意<code>$A[i]$</code>，并将其递增<code>$1$</code>。</p>
+<p>返回使 A 中的每个值都是唯一的最少操作次数。</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：[1,2,2]</span><br><span class="line">输出：1</span><br><span class="line">解释：经过一次 move 操作，数组将变为 [1, 2, 3]。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入：[3,2,1,2,1,7]</span><br><span class="line">输出：6</span><br><span class="line">解释：经过 6 次 move 操作，数组将变为 [3, 4, 1, 2, 5, 7]。</span><br><span class="line"></span><br><span class="line">可以看出 5 次或 5 次以下的 move 操作是不能让数组的每个值唯一的。</span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ol>
+<li><code>$0 &lt;= A.length &lt;= 40000$</code></li>
+<li><code>$0 &lt;= A[i] &lt; 40000$</code></li>
+</ol>
+<p>一、<a href="#jump1">排序O(nlogn)</a></p>
+<p>二、<a href="#jump2">计数排序O(N)</a></p>
+<p>三、<a href="#jump3">线性探测法O(N) （含路径压缩）</a></p>
+<p><span id="jump1"></span></p>
+<h3 id="一、排序O-nlogn"><a href="#一、排序O-nlogn" class="headerlink" title="一、排序O(nlogn)"></a>一、排序O(nlogn)</h3><p>逻辑：先排序，再依次遍历数组元素，若当前元素小于等于它前一个元素，则将其变为前一个数+1。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minIncrementForUnique</span><span class="params">(<span class="keyword">int</span>[] A)</span> </span>&#123;</span><br><span class="line">        Arrays.sort(A);</span><br><span class="line">        <span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;A.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(A[i]&lt;=A[i-<span class="number">1</span>])&#123;</span><br><span class="line">                <span class="keyword">int</span> pre=A[i];</span><br><span class="line">                A[i]=A[i-<span class="number">1</span>]+<span class="number">1</span>;</span><br><span class="line">                cnt+=A[i]-pre;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cnt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li>时间复杂度：<code>$O(N\log N)$</code>，其中 N 是数组 A 的长度，即排序的时间复杂度。</li>
+<li>空间复杂度：<code>$O(\log N)$</code>，排序需要额外 <code>$O(\log N)$</code> 的栈空间。</li>
+</ul>
+<p><span id="jump2"></span></p>
+<h3 id="二、计数排序O-N"><a href="#二、计数排序O-N" class="headerlink" title="二、计数排序O(N)"></a>二、计数排序O(N)</h3><p>计数思想的稍微优化</p>
+<p>当我们找到一个没有出现过的数的时候，将之前某个重复出现的数增加成这个没有出现过的数。注意，这里 <strong>「之前某个重复出现的数」</strong> 是可以任意选择的，它并不会影响最终的答案，因为将 P 增加到 X 并且将 Q 增加到 Y，与将 P 增加到 Y 并且将 Q 增加到 X 都需要进行 (X + Y) - (P + Q) 次操作。</p>
+<p>例如当数组 A 为 [1, 1, 1, 1, 3, 5] 时，我们发现有 3 个重复的 1，且没有出现过 2，4 和 6，因此一共需要进行 (2 + 4 + 6) - (1 + 1 + 1) = 9 次操作。</p>
+<p><strong>算法</strong></p>
+<p>首先统计出每个数出现的次数，然后从小到大遍历每个数 x：</p>
+<ul>
+<li>如果 x 出现了两次以上，就将额外出现的数记录下来（例如保存到一个列表中）；</li>
+<li>如果 x 没有出现过，那么在记录下来的数中选取一个 v，将它增加到 x，需要进行的操作次数为 x - v。</li>
+</ul>
+<p>在这里可以进行优化，例如输入 [3, 2, 1, 2, 1, 7]，计数之后有两个 1 和两个 2。我们先看最小的数，两个 1 重复了，需要有一个增加到 2，这样 2 的数量变成了三个。在三个 2 中，又有两个需要增加到 3，然后又出现了两个 3…… 以此类推，可以计算出需要增加的次数。和官方给出的题解来说，复杂度由<code>$O(n+80000)$</code>变为<code>$O(n+40000)$</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minIncrementForUnique</span><span class="params">(<span class="keyword">int</span>[] A)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] cnt=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">40001</span>];</span><br><span class="line">        <span class="keyword">int</span> max=-<span class="number">1</span>,ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;A.length;i++)&#123;</span><br><span class="line">            cnt[A[i]]++;</span><br><span class="line">            max=Math.max(max,A[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=max;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(cnt[i]&gt;<span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">int</span> t=cnt[i]-<span class="number">1</span>;</span><br><span class="line">                cnt[i+<span class="number">1</span>]+=t;</span><br><span class="line">                ans+=t;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> t=cnt[max+<span class="number">1</span>]-<span class="number">1</span>;</span><br><span class="line">        ans+=(t+<span class="number">1</span>)*t/<span class="number">2</span>;  <span class="comment">// 1+2+3+4+...+t 每次移动累加的步数</span></span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 最后, counter[max+1]里可能会有从counter[max]后移过来的，counter[max+1]里只留下1个，其它的d个后移。</span><br><span class="line">&#x2F;&#x2F; 设 max+1 &#x3D; x，那么后面的d个数就是[x+1,x+2,x+3,...,x+d],</span><br><span class="line">&#x2F;&#x2F; 因此操作次数是[1,2,3,...,d],用求和公式求和。</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>时间复杂度：设 n 为数组元素的个数，k 为数组元素的可能取值个数（本期中 k = 40000），这个算法的时间复杂度是 O(n + k)。</li>
+</ul>
+<p><span id="jump3"></span><br><strong>三、线性探测法O(N) （含路径压缩）</strong></p>
+<p>这道题换句话说，就是需要把原数组映射到一个地址不冲突的区域，映射后的地址不小于原数组对应的元素。<br>比如[3, 2, 1, 2, 1, 7]就映射成了[3, 2, 1, 4, 5, 7]。</p>
+<p>我想了下，这道题目其实和<strong>解决hash冲突的线性探测法</strong>比较相似！<br>如果地址冲突了，会探测它的下一个位置，如果下一个位置还是冲突，继续向后看，直到第一个不冲突的位置为止。</p>
+<p><strong>关键点：因为直接线性探测可能会由于冲突导致反复探测耗时太长，因此我们可以考虑探测的过程中进行路径压缩。<br>怎么路径压缩呢？就是经过某条路径最终探测到一个空位置x后，将这条路径上的值都变成空位置所在的下标x，那么假如下次探测的点又是这条路径上的点，则可以直接跳转到这次探测到的空位置x，从x开始继续探测。</strong></p>
+<p>下面用样例2：[3, 2, 1, 2, 1, 7]，来模拟一遍线性探测的过程.</p>
+<p><strong>step1: 插入3：</strong><br><img src="https://i.loli.net/2020/03/26/cgvEp79Zimbkfoz.png" alt="fd50b8a3b585ffd91c3f47d108750f73b5a8cec72f2a9ab047fc92d63efa7543-image.png"></p>
+<p>因为3的位置是空的，所以直接放入3即可。（此时数组变成了上图，红色表示本次的更改）</p>
+<p><strong>step2: 插入2：</strong><br><img src="https://i.loli.net/2020/03/26/kNl5drgtxX2DhP7.png" alt="47204faec8628b9bbce133a5e4f153f9bc56147cf0b4e06d128ef50d884a4af2-image.png"></p>
+<p>因为2的位置是空的，所以直接放入2即可。（此时数组变成了上图，红色表示本次的更改）</p>
+<p><strong>step3: 插入1：</strong><br><img src="https://i.loli.net/2020/03/26/mYs2ndFceDKpJ5E.png" alt="361086e48c561d1fc6850bbec6033ad331c3a9d3e5cb1761f06fce09a01c00b6-image.png"></p>
+<p>因为1的位置是空的，所以直接放入1即可。（此时数组变成了上图，红色表示本次的更改）</p>
+<p><strong>step4: 插入2：</strong><br><img src="https://i.loli.net/2020/03/26/mzc3bVIDStW1A6v.png" alt="4af08cd218443a0613e5fa7165a4be21ff4f1b61151f62fd964313761627283b-image.png"></p>
+<p>此时我们发现2的位置已经有值了，于是继续向后探测，直到找到空位4，于是2映射到了4。<br>并且！！我们要对刚刚走过的路径2-&gt;3-&gt;4进行压缩，即将他们的值都设置为本次探测到的空位4(那么下次探测就可以直接从4往后找了)。<br>（此时数组变成了上图，红色表示本次的更改）</p>
+<p><strong>step5: 插入1：</strong><br><img src="https://i.loli.net/2020/03/26/6asjkXSF13lAhJf.png" alt="ad9ead058e608ff6ad9bf9c7b6ab98fe81d41eef3f008413b2582451b60255a3-image.png"></p>
+<p>此时我们发现1的位置已经有值了，于是向后探测，探测到了2，发现2的位置也有值了，但是由于2在上次的过程中存了上次的空位4，所以我们直接跳转到4+1即从5开始探测就行了（而不需要重复走一遍2-&gt;3-&gt;4这条路径喽！），此时我们发现5是个空位，因此将1映射到5，并且对与刚刚走过的路径1-&gt;2-&gt;5进行路径压缩即使其都映射到5！<br>（此时数组变成了上图，红色表示本次的更改）</p>
+<p><strong>step6: 插入7：</strong></p>
+<p><img src="https://i.loli.net/2020/03/26/UbeaOFruMVyiYKd.png" alt="73f7dcb708bf44f11dceb636e878173f7212d910e523f2700c830737483f5117-image.png"></p>
+<p>因为7的位置是空的，所以直接放入7即可。（此时数组变成了上图，红色表示本次的更改）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] pos=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">80000</span>];</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minIncrementForUnique</span><span class="params">(<span class="keyword">int</span>[] A)</span> </span>&#123;</span><br><span class="line">        Arrays.fill(pos,-<span class="number">1</span>);  <span class="comment">// -1表示空位</span></span><br><span class="line">        <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> a:A)&#123;</span><br><span class="line">            <span class="keyword">int</span> b=findPos(a);</span><br><span class="line">            ans+=b-a;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 线性探测法寻址（含路径压缩）</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findPos</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> b=pos[a];</span><br><span class="line">        <span class="comment">// 如果对应的位置是空位，直接放入</span></span><br><span class="line">        <span class="keyword">if</span>(b==-<span class="number">1</span>)&#123;</span><br><span class="line">            pos[a]=a;</span><br><span class="line">            <span class="keyword">return</span> a;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 否则向后寻址</span></span><br><span class="line">        <span class="comment">// 直到找到一个空位，同时更新一路上的路径</span></span><br><span class="line">        b=findPos(b+<span class="number">1</span>);</span><br><span class="line">        pos[a]=b;  <span class="comment">// 寻址后的新空位要重新赋值给pos[a]哦，路径压缩就是体现在这里。</span></span><br><span class="line">        <span class="keyword">return</span> b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/27/945.%20%E4%BD%BF%E6%95%B0%E7%BB%84%E5%94%AF%E4%B8%80%E7%9A%84%E6%9C%80%E5%B0%8F%E5%A2%9E%E9%87%8F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-876. 链表的中间结点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1117,81 +1251,10 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/22/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/22/hello-world/" class="archive-article-date">
-  	<time datetime="2020-01-22T07:52:45.957Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/22/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 
